@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Small Web ~ Guestbook</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="device=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/print.css" rel="stylesheet" type="text/css" media="print"> 
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</head> 
+
+<body>
+
+    <div id="outer-wrapper">
+        <header>
+            <nav>
+                <label for="navMenuCheck" id="navMenuButton">
+                    <i class="iconify" data-icon="charm:menu-hamburger" data-inline="false"  data-width="4em"></i>
+                </label>
+                <input type="checkbox" id="navMenuCheck">
+                <ul id="navMenu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="why.html">Why The Small Web?</a></li>
+                    <li><a href="advice.html">Advice</a></li>
+                    <li><a href="credits.html">Credits</a></li>
+                </ul>
+            </nav>
+            <h1>Welcome to the small web</h1>
+            <img src="img/assets/shrine1thin.svg" alt="A very tiny shrine.">
+        </header>
+        <div class="inner-wrapper" >
+            <main id="top">
+                <p class="centered">An introduction to the movement that's called the <span class="edit">"small web."</span></p>
+                <p class="author"> Originally written by <a href="https://neustadt.fr/index.html">Parimal Satyal</a></p>
+                <p class="author edit">Edited by <a href="https://wychwit.ch">wych(witch)</a></p>
+                    
+                <div class="section-wrapper" >
+                    <section id="guestbook">
+                        <h2>Comments</h2>
+                        <section id="comments-scroll">
+                        <div class="guest-post">
+                                <p class="name" style="color:deepskyblue">Example Name</p>
+                                <p class="date">10-12-2021</p>
+                                <div class="comment">
+                                    <p>Comments and feedback goes here. This is a very long one. Verrry long</p>
+                                    <p>very very long comment!!! With paragraphs</p>
+                                    <p>Like this</p>
+                                </div>
+                            </div>
+                            <div class="guest-post">
+                                <p class="name">Example Name</p>
+                                <p class="date">10-12-2021</p>
+                                <p class="comment">Comments and feedback goes here.</p>
+                            </div>
+                            <div class="guest-post">
+                                <p class="name" style="color:goldenrod">Example Name</p>
+                                <p class="date">10-12-2021</p>
+                                <div class="comment">
+                                    <p>Comments and feedback goes here. This is a very long one. Verrry long</p>
+                                    <p>very very long comment!!! With paragraphs</p>
+                                    <p>Like this</p>
+                                </div>
+                            </div>
+                            <div class="guest-post">
+                                <p class="name">Example Name</p>
+                                <p class="date">10-12-2021</p>
+                                <div class="comment">
+                                    <p>Comments and feedback goes here. This is a very long one. Verrry long</p>
+                                    <p>very very long comment!!! With paragraphs</p>
+                                    <p>Like this</p>
+                                </div>
+                            </div>
+                            <div class="guest-post">
+                                <p class="name" style="color:black">Example Name</p>
+                                <p class="date">10-12-2021</p>
+                                <div class="comment">
+                                    <p>Comments and feedback goes here. This is a very long one. Verrry long</p>
+                                    <p>very very long comment!!! With paragraphs</p>
+                                    <p>Like this</p>
+                                </div>
+                            </div>
+                    </section>
+                        
+                    </section>
+                    <section id="form-section">
+                        <h2>Guestbook and Survey</h2>
+                        <form action="./guestbookPost.php" method="post" name="guestbook">
+                            <fieldset id="mainset">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required="required">
+                                <label for="site">Site</label>
+                                <input type="text" id="site">
+                                <label for="color">Name Color</label>
+                                <input type="color" id="color" name="color">
+                                
+                                <label for="date">Post Date</label>
+                                <input type="date" id="date" name="date">
+                                
+                                <!-- js to set today's date to today by default, from -->
+                                <!-- https://stackoverflow.com/a/13052187/18465512 -->
+                                <script>
+                                    Date.prototype.toDateInputValue = (function() {
+                                        var local = new Date(this);
+                                        local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+                                        return local.toJSON().slice(0,10);
+                                    });
+                                    document.getElementById('date').value = new Date().toDateInputValue();
+                                </script>
+                                
+
+                                <label class="centerLabel">How satisfied were you with this guide to the small web?</label>
+                                <select id="satisfaction">
+                                    <option value="1">not at all</option>
+                                    <option value="2">could use some work</option>
+                                    <option value="3">it's fine</option>
+                                    <option value="4">I liked it</option>
+                                    <option value="5">I loved it</option>
+                                </select>
+                                
+                                <label class="centerLabel">Comment Privacy</label>
+                                <input type="radio" name="confirmRadio" id="confirmRadio0">
+                                <label for="confirmRadio0">post publicly</label>
+                                
+                                <input type="radio" name="confirmRadio" id="confirmRadio1">
+                                <label for="confirmRadio1">post privately</label>
+
+                                <label for="comments">Comments?</label>
+                                <textarea id="comments" spellcheck="true"></textarea>
+                                
+                                <label class="centerLabel">Do you consent to the processing of this data? (and that you are older than 16, for compliance with the GDPR?)</label>
+                                <input type="checkbox" name="confirmConsent" id="confirmConsent">
+                                <label for="confirmConsent">I accept</label>
+                            </fieldset>
+                            <fieldset id="buttonset">
+                                <input type="submit" value="Submit">
+                                <input type="reset">
+                            </fieldset>
+                        </form>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer>
+        <div id="license">
+            <span class="iconify-inline" data-icon="cib:creative-commons" data-width="80"></span>
+            <span class="iconify-inline" data-icon="cib:creative-commons-by" data-width="80"></span>
+            <span class="iconify-inline" data-icon="cib:creative-commons-nc" data-width="80"></span>
+            
+            <p><a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">This work is licensed under CC-BY-NC.</a></p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="./home.html">
+                    <span class="iconify-inline" data-icon="jam:home"  data-width="40"></span>
+                </a></li>
+                <li><a href="./why.html">
+                    <span class="iconify-inline" data-icon="akar-icons:book-close"  data-width="40"></span>
+                </a></li>
+                <li><a href="./guestbook.html">
+                    <span class="iconify-inline" data-icon="akar-icons:edit"  data-width="40"></span>
+                </a></li>
+                <li><a href="./objectives.html">
+                    <span class="iconify-inline" data-icon="material-symbols:school-outline-rounded" data-width="40"></span>
+                </a></li>
+                <li><a href="./advice.html">
+                    <span class="iconify-inline" data-icon="system-uicons:speech-bubble" data-width="40"></span>
+                </a></li>
+                <li><a href="./credits.html">
+                    <span class="iconify-inline" data-icon="ph:address-book"  data-width="40"></span>
+                </a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

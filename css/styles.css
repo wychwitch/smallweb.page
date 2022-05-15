@@ -1,0 +1,1147 @@
+@import url("variables.css");
+*{box-sizing: border-box;}
+
+body{
+    background-color: var(--white);
+    margin:0;
+}
+
+/* These are print-only elements, so must be immediately hidden */
+.footnote-link,
+#footnotes{
+    display: none;
+}
+
+/* Headings */
+
+h1, h2, h3{
+    font-family: var(--headerFont);
+    color: var(--mainColor);
+    text-align: center;
+}
+
+h1{
+    padding-top: 1.5em;
+    font-size: 3.8em;
+    margin: 0;
+    font-weight: 900;
+}
+
+h2{
+    font-size: 2.8em;    
+}
+
+h3{
+    font-size: 1.8em;
+}
+
+/* WRAPPERS */
+
+.section-wrapper{
+    background-color: var(--dark);
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    /* This is (one of) the CSS3 styles im using */
+    border-radius: 1rem;
+}
+
+#outer-wrapper{
+    width: 100%;
+    margin:auto;
+}
+
+/* HEADER STYLES */
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+}
+
+/* ==> Mobile Menu Styles <== */
+
+/* CHange menu button */
+header .iconify{
+    color: hsl(0, 45%, 60%);
+}
+
+/* hide the nav menu */
+header nav ul{
+    display: none;
+    padding:0;
+    width: 100%;
+}
+
+/* color every other nav row */
+header nav li:nth-of-type(odd){
+    background-color: var(--white);
+}
+
+/* remove the nav menu checkbox (label still works and is displayed */
+#navMenuCheck{
+    display: none;
+}
+
+/* show the nav menu when the checkbox is checked */
+#navMenuCheck:checked + #navMenu{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the nav menu button row */
+#navMenuButton{
+    width: 100%;
+    background-color: var(--dark);
+    height:auto;
+}
+
+/* Make each link block for easy clicking */
+header nav a {
+    display: block;
+    color: var(--secondaryColor);
+    font-weight: 900;
+    text-decoration: none;
+    padding: 1em;
+    text-align: center;
+}
+
+header nav a:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+}
+
+/* Border on bottom of nav so it can stand out */
+header nav{
+    border-bottom: 4px var(--mainColor) solid;
+}
+
+header nav ul{
+    margin:0;
+}
+
+header nav label{
+    padding-left: 80%
+}
+
+/* modifying nav list for mobile */
+header nav li{
+    list-style: none;
+    padding:0;
+    font-size: 1.5rem;
+    font-family: var(--mainFont);
+    background-color: var(--dark);
+}
+
+header img{
+    display: block;
+    width:40%;
+    max-width: 400px;
+    margin: 5% auto 5% auto;
+}
+
+/* <== Mobile Menu Styles ==> */
+
+
+
+/* ==> MAIN <== */
+
+.inner-wrapper{
+    padding:20px;
+}
+
+/* styling anchor links */
+footer p a,
+.inner-wrapper p a,
+.inner-wrapper li a,
+table a,
+figcaption a{
+    color: unset;
+    text-decoration: none;
+    border-bottom: 2px var(--secondaryColor) solid;
+    transition: all 100ms ease-in-out;
+}
+
+figcaption a{
+    border-bottom: none;
+}
+
+/* placing link symbol before links */
+footer p a::before,
+.inner-wrapper p a::before,
+.inner-wrapper li a::before,
+table a::before{
+    content: url('https://api.iconify.design/fa-solid/link.svg?color=%238ac76b&width=15');
+    
+    /* prevents the link symbol from being on the wrong line! */
+    white-space: nowrap;
+    display: inline;
+    /* animates the following css */
+    transition: all 100ms ease-in-out;
+}
+
+/* underline grows in size when hovered */
+footer p a:hover,
+footer p a:active,
+.inner-wrapper p a:hover, 
+.inner-wrapper p a:active,
+.inner-wrapper li a:hover, 
+.inner-wrapper li a:active,
+table a:hover, 
+table a:active{
+    border-bottom: 4px var(--secondaryColor) solid;
+}
+
+.centered {
+    padding-bottom: 20%;
+    width: 80%;
+    margin:5% auto 5% auto;
+    text-align: center;
+}
+
+.author{
+    font-size: 1.2em;
+    padding-right: 30px;
+}
+
+main p,
+main ol,
+main dt,
+main dl dd{
+    font-family: var(--mainFont);
+    font-size: 1.6rem;
+    line-height: 1.6em;
+    font-weight: 400;
+}
+
+main dd{
+    margin: 4%;
+}
+
+main dt{
+    font-size: 3rem;
+    text-align: center;
+}
+
+main dt a{
+    color: var(--mainColor);
+    text-decoration: none;
+    
+}
+
+main section{
+    background-color: var(--dark);
+    padding: 1em;
+    width: 100%;
+    overflow-x:auto;
+}
+
+main ul,
+main ol{
+    background-color: var(--white);
+    padding: 2em;
+    border-radius: 1em;
+}
+
+main ul{
+    list-style: none;
+    padding-left:1em;
+    width:100%;
+    margin: auto;
+
+}
+
+main ul ul{
+    width:100%;
+    padding:0 2em 0 0;
+}
+
+main ul li{
+    font-family: var(--mainFont);
+    font-size: 1.6rem;
+    line-height: 1.6em;
+}
+
+/* Replacing the ul li symbol */
+main ul 
+    li::before{
+    content: url('https://api.iconify.design/el/leaf.svg?color=%23c76b6b&width=20&flip=horizontal');
+    padding-right: 5px;
+    white-space: nowrap;
+}
+
+main ul 
+    li 
+    li::before{
+    content: url('https://api.iconify.design/el/leaf.svg?color=%23595959&width=20');
+    white-space: nowrap;
+}
+
+main section li ~ li{
+    margin-top: 1em;
+}
+
+main section ul ul{
+    border-left: 5px var(--mainColor) solid;
+    margin-left: 0.5em;
+    border-radius: 0;
+}
+
+main section ul ul{
+    margin-top: 0.5em;
+}
+
+
+
+article.section-wrapper p:first-of-type:first-letter{
+    white-space: normal;
+    color: var(--mainColor);
+    font-size: 1.2em;
+    font-family: var(--headerFont);
+}
+
+
+.section-wrapper section#comparison-section ul ul{
+    width: 100%;
+}
+
+
+li.neocities::before{
+    content: url('https://api.iconify.design/el/leaf.svg?color=%23c7a16b&width=20');
+    white-space: nowrap;
+}
+
+
+li.leprdspace::before{
+    content: url('https://api.iconify.design/el/leaf.svg?color=%23ab6bc7&width=20');
+    white-space: nowrap;
+}
+
+li.digitalocean::before{
+    content: url('https://api.iconify.design/el/leaf.svg?color=%236ba8c7&width=20');
+    white-space: nowrap;
+}
+
+li.strawpage::before{
+    content: url('https://api.iconify.design/el/leaf.svg?color=%23c76b8d&width=20');
+    white-space: nowrap;
+}
+
+li.neocities>.iconify,
+li.leprdspace>.iconify,
+li.digitalocean>.iconify,
+li.strawpage>.iconify{
+    width: 4em;
+    padding-left: 1em;
+}
+
+main ul li li{
+    font-size: inherit;
+    margin-left: 1em;
+    width:100%;
+}
+
+main ol{
+    width:66%;
+    margin: auto;
+}
+main ol li::marker{
+    color: var(--mainColor);
+    font-weight: 900;
+}
+
+main figcaption{
+    color: var(--mainColor);
+    font-family: var(--mainFont);
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+}
+
+main#entrance section{
+    background-color: var(--white);
+}
+
+main#entrance figcaption{
+    font-size: 1.6em;
+}
+
+main#entrance a{
+    outline: none;
+    text-decoration: none;
+    transition: 100ms;
+}
+
+main#entrance a:hover img{
+    content: url("../img/assets/desktop1\(hover\).svg");
+}
+
+main#entrance a:active img{
+    content: url("../img/assets/desktop2\(hover\).svg");
+}
+
+.section-wrapper section img{
+    width:100%;
+    display: inline;
+}
+
+/* Styling the 3 shrines next to eachother */
+#shrineCollection{
+    display: flex;
+    flex-flow: row;
+}
+
+#shrineCollection{
+    align-self: flex-end;
+}
+
+#text-1{
+    order: 1;
+}
+#example-1{
+    order: 2;
+}
+#text-2{
+    order: 3;
+}
+#example-2{
+    order: 4;
+}
+#text-3{
+    order: 5;
+}
+#example-3{
+    order: 6;
+}
+#text-4{
+    order: 7;
+}
+#example-4{
+    order: 8;
+}
+
+#comparison-section{
+    order: 9;
+}
+
+#comparison-section table{
+    display: none;
+}
+
+#objective-list{
+    width: 100%;
+    background-color: unset;
+    padding-top: 0;
+}
+
+.clear-list,
+.clear-list ul{
+    background-color: unset;
+}
+
+/* <== MAIN ==> */
+
+
+/* Footer */
+
+footer{
+    margin-top:3%;
+    text-align: center;
+    font-size: 1.4em;
+    font-family: var(--mainFont);
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+footer .iconify-inline{
+    color: var(--mainColor);
+}
+
+footer nav a{
+    color: unset;
+    text-decoration: none;
+    
+}
+
+footer ul{
+    margin: 2em 0 0 0;
+}
+
+footer nav li{
+    font-size: 1.2rem;
+    display: inline;
+    margin: 0 0.3em;
+    color: var(--mainColor);
+    
+}
+
+footer a:hover .iconify-inline{
+    transition: all 50ms ease-in-out;
+}
+
+footer a:hover .iconify-inline{
+    color: var(--secondaryColor);
+    border: 3px var(--secondaryColor) solid;
+    border-radius: 4px;
+}
+
+
+/* FORM */
+
+
+form{
+    background-color: var(--mainColor);
+    margin-bottom: 10%;
+    border-radius: 1rem;
+    border: 6px var(--mainColorDarker) solid;
+    width:100%;
+}
+
+/* Main formset */
+#mainset{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    grid-template-rows: auto;
+    font-family: var(--mainFont);
+    font-size: 1.6em;
+    border: none;
+    column-gap: 5px;
+    row-gap: 0.3em;
+    align-items: stretch;
+}
+
+legend{
+    grid-column: 1/-1;
+    margin:0 auto;
+    font-size: initial;
+    font-size: 1.4em;
+    font-family: var(--mainFont);
+    font-weight: 700;
+}
+
+form label{
+    font-weight: 600;
+
+}
+
+form input[type="checkbox"], 
+form input[type="radio"]{
+    grid-column: 1/2;
+    justify-self: end;
+    accent-color: var(--secondaryColorLighter);
+    width: 1.5em;
+    cursor: pointer;
+}
+
+form label[for*="checkbox"], 
+form label[for*="radio"]{
+    grid-column: 2/5;
+    text-align: left;
+    cursor: pointer;
+} 
+
+form input, 
+form select{
+    grid-column: 1/5;
+    font-family: var(--mainFont);
+}
+
+form textarea{
+    resize: none;
+    border: 3px var(--black) solid;
+    border-radius: 4px;
+    height: 10em;
+    width: 100%;
+    grid-column: 1/5;
+    font-family: var(--mainFont);
+    font-size: 1em;
+}
+
+form label[for="name"], 
+form label[for="email"],
+form label[for*="select"],
+form label[for="date"], 
+form label[for="site"], 
+form label[for="color"],
+form label[for="comments"],
+form .centerLabel{
+    grid-column: 1/5;
+    text-align: center;
+    padding-bottom: 2%;
+    padding-top: 4%;
+    border-bottom: 4px var(--black) solid;
+}
+
+form input[type="color"]{
+    width: 100%;
+}
+
+select,
+input[type="text"], 
+input[type="email"], 
+input[type="date"],
+input[type="color"]{
+    border: 2px var(--black) solid;
+    border-radius: 5px;
+    background-color: var(--dark);
+    font-size: 0.8em;
+    height: 2em;
+    width: 100%;
+}
+
+
+select:focus, 
+textarea:focus,
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="date"]:focus, 
+input[type="color"]:focus{
+    outline: 3px solid var(--secondaryColor);
+}
+
+
+/* The button formset */
+#buttonset{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    font-family: var(--mainFont);
+    font-size: 1.6em;
+    border: none;
+    gap: 20px;
+}
+
+#buttonset input{
+    font-family: var(--headerFont);
+    font-size: .7em;
+    font-weight: 600;
+    border: none;
+    padding: 0.3em 2em;
+    cursor: pointer;
+    width:100%;
+    height:3em;
+    grid-column: 1/5; 
+}
+
+#buttonset input[type="submit"]{
+       
+    background-color: var(--secondaryColorLighter);
+}
+
+#buttonset input[type="reset"]{
+    background-color: var(--mainColorDarker);
+    color: white;
+}
+
+/* TABLE */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: var(--mainFont);
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    overflow-x:scroll;
+}
+
+table caption{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--mainColor);
+}
+
+tr:nth-of-type(even) td{
+    border-left: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+}
+
+tr:nth-of-type(odd) td{
+    border-left: 2px solid var(--dark);
+    border-right: 2px solid var(--dark);
+}
+
+th:first-of-type,
+th:last-of-type,
+tbody td:first-of-type, 
+tbody td:last-of-type{
+        border-left: none;
+        border-right: none;
+}
+
+tbody tr:nth-of-type(odd){
+    background-color: var(--white);
+}
+
+thead tr{
+    border-bottom: 3px var(--mainColor) solid;
+    
+}
+
+tfoot tr{
+    border-top: 3px var(--mainColor) solid;
+}
+
+th, 
+td{
+    padding: 10px;
+    
+}
+
+td ul{
+    margin:0;
+}
+
+table td:last-of-type{
+    text-align: center;
+}
+/* fixing link  */
+table td:first-of-type{
+    width: 10em;
+}
+ 
+/* A scrolling container for the comments example */
+#comments-scroll{
+    height:80rem;
+    overflow-y: scroll;
+    background-color: var(--darkest);
+    border-radius: 1rem;
+    border: 6px var(--mainColorDarker) solid;
+}
+
+/* Guest posts and adice post styling */
+.guest-post,
+.advice-post{
+    background-color: var(--white);
+    border-radius:1rem;
+    border: 3px var(--mainColorDarker) solid;
+}
+
+.guest-post{
+    margin:1rem;
+}
+
+section.advice-post{
+    margin: 2rem 2em;
+    width: auto;
+    height: fit-content;
+}
+
+/* The following are classes for the guest and advice comments */
+
+.name, .date{
+    text-align: right;
+    font-size: 1.3rem;
+    font-style: italic;
+    margin:0;
+    
+}
+
+.name{
+    color: var(--mainColor);
+    padding:1rem 1rem 0 0;
+}
+
+.date{
+    padding:0 1rem 0 0;
+}
+
+.comment{
+    padding: 0 1rem 2rem 1rem;
+}
+
+
+
+
+/* MISC */
+
+blockquote{
+    font-family: var(--mainFont);
+    font-size: 1.6em;
+    font-style: italic;
+    color: var(--darkest);
+    border-left: 3px var(--mainColor) solid;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+/* To top button.*/
+#to-top{
+    display: inline;
+    float: right;
+    margin:-2em;
+    position: sticky;
+    top: 80%;
+    left:80%;
+    width: 2em;
+    opacity: 0.8;
+    z-index: 3;
+}
+
+/* To differentiate my comments from the original article's */
+.edit{
+    color: var(--mainColor);
+}
+
+.author{
+    text-align: right;
+    font-style: italic;
+}
+
+.icon{
+    padding: 50px;
+    width:400px;
+}
+
+.japanese{
+    font-family: var(--japaneseFont);
+}
+
+.shrine{
+    width:50%;
+    margin: auto;
+}
+
+.shrine img{
+    align-self: baseline;
+}
+
+.hidden{
+    display: none;
+}
+
+.bold{
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* resizing the figure class for the shrine collection image */
+#shrineCollectionFigure{
+    width: 100%;
+}
+
+#entrance{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+/* resizing the temple image */
+#temple {
+    width:90%;
+    margin:auto;
+}
+
+
+/* easter egg sshhs*/
+#easteregg,
+#easteregg-checkbox{
+    display:none;
+}
+
+#easteregg-checkbox:checked ~ #easteregg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+}
+#easteregg-checkbox:checked ~ *{
+    display: none;
+}
+
+label[for="easteregg-checkbox"]{
+    position: relative;
+    bottom:0;
+    right:0;
+}
+
+@media (min-width: 600px){
+    /* FORMS */
+
+    /* reformating form to fit the new resolution */
+    select,
+    input[type="text"], 
+    input[type="email"], 
+    input[type="date"], 
+    input[type="color"]{
+        width: 100%;
+    }
+
+    #mainset{
+        column-gap: 0;
+        gap:5px;
+        align-items: stretch;
+    }
+
+    #buttonset input[type="submit"]{
+        background-color: var(--secondaryColorLighter);
+    }
+
+    #buttonset input[type="reset"]{
+        background-color: var(--mainColorDarker);
+        color: white;
+    }
+
+    table{
+        font-size: 1.4rem;
+    }
+
+    #to-top{
+        display: none;
+    }
+}
+
+@media (min-width: 720px){
+    
+    h1{
+        padding-top: 0;
+    }
+
+    header img{
+        max-width: 15%;
+    }
+
+    header nav{
+        border-bottom: 0;
+        margin: 3% 0;
+        position: relative;
+    }
+
+    header nav ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding:0;
+    }
+
+    header nav li:last-of-type{
+        border-bottom: none;
+    }
+
+    header nav li,
+    header nav li:nth-of-type(odd){
+        background-color: unset;
+    }
+
+    header nav a {
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: var(--white);
+        box-shadow: 3px 3px var(--mainColor);
+        border-radius: 8px;
+        margin-top:1rem;
+        transition: all 50ms ease-in-out;
+    }
+    
+    header nav a:hover, 
+    header nav a:active{
+        box-shadow: 3px 3px var(--secondaryColor);
+        border: 3px var(--secondaryColor) solid;
+        color: var(--secondaryColor);
+        text-decoration: none;
+    }
+
+    header li{
+        margin: 0 0.5rem;
+    }
+
+    main section{
+        width: 50%;
+    }
+
+    main section:last-of-type:nth-of-type(odd){
+        width: 100%;
+    }
+
+    section.advice-post{
+        width: 40%;
+    }
+
+    /* wrapper that contains everything (header and footer) */
+    #outer-wrapper{
+        width: 100%;
+        margin:auto;
+    
+    }
+
+    /* wrapper that contains just the sections */
+    .section-wrapper{
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .section-wrapper#HomePage{
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .section-wrapper#HomePage ul ul{
+        margin-top: 0;
+    }
+
+    .centered{
+        padding-bottom: 0;
+    }
+
+    #navMenuButton{
+        display: none;
+    }
+
+    /* reordering the home page sections */
+    #text-1{
+        order: 1;
+    }
+    #example-1{
+        order: 2;
+    }
+    #text-2{
+        order: 4;
+    }
+    #example-2{
+        order: 3;
+    }
+    #text-3{
+        order: 5;
+    }
+    #example-3{
+        order: 6;
+    }
+    #text-4{
+        order: 8;
+    }
+    #example-4{
+        order: 7;
+    }
+    
+    #comparison-section{
+        order: 9;
+    }
+
+    article .section-wrapper p{
+        text-indent: 1em;
+    }
+}
+
+@media (min-width: 800px){
+    .section-wrapper section#comparison-section>ul{
+        padding-left: 10em;
+    }
+}
+
+@media (min-width: 1040px){
+
+    main section{
+        padding: 1em 2em;
+    }
+
+    /* hiding the list and displaying the table */
+    #comparison-section ul{
+        display: none;
+    }
+    #comparison-section table{
+        display: block;
+    }
+
+    .section-wrapper{
+        width: 90%;
+        margin: auto;
+    }
+
+    .centered{
+        margin:0 auto 1% auto;
+    }
+
+    .author{
+        padding-right: 7%;
+    }
+    
+    /* FORMS */
+    form label[for="name"], 
+    form label[for="email"],
+    form label[for="site"], 
+    form label[for*="select"],
+    form label[for="date"], 
+    form label[for="color"]{
+        grid-column: 1/3;
+        border-bottom: 0;
+        text-align: right;
+    }
+
+    form input{
+        grid-column: 3/5;
+        font-family: var(--mainFont);
+    }
+
+    form select{
+        grid-column: 2/4
+    }
+
+    form input[type="checkbox"], 
+    form input[type="radio"]{
+        grid-column: 2/3;
+    }
+
+    form label[for*="checkbox"], 
+    form label[for*="radio"]{
+        grid-column: 3/4;
+    }
+    #buttonset input[type="submit"]{
+        grid-column: 2/3;
+    }
+
+    #buttonset input[type="reset"]{
+        grid-column: 3/4;
+    }
+}
+
+@media (min-width: 1440px){
+
+    
+
+    form input{
+        grid-column: 2/4;
+    }
+
+
+
+    form label[for="name"], 
+    form label[for="site"], 
+    form label[for="email"],
+    form label[for*="select"],
+    form label[for="date"], 
+    form label[for="color"]{
+        grid-column: 1/2;
+        border-bottom: 0;
+        
+    }
+
+    #mainSet{
+        column-gap: 0;
+    }
+
+    .section-wrapper{
+        width: 70%;
+        margin: auto;
+    }
+
+    .author{
+        padding-right: 15%;
+    }
+
+}
+
+
+

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Dosis:wght@500&family=Fredoka&display=swap');
+
+:root{
+    --mainColor: hsl(0, 45%, 60%);
+    --mainColorDarker: hsl(0, 35%, 40%);
+    --secondaryColor: hsl(100, 45%, 60%);
+    --secondaryColorLighter: hsl(100, 75%, 80%);
+    --white: #FFF;
+    --dark: hsl(0, 0%, 93%);
+    --darker: hsl(0, 0%, 70%);
+    --darkest: hsl(0, 0%, 35%);
+    --black: hsl(0, 0%, 10%);
+    --mainFont: 'Fredoka', sans-serif;
+    --headerFont: 'Dosis', sans-serif;
+    --japaneseFont: 'Kosugi Maru', sans-serif;
+}

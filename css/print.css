@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2&family=Architects+Daughter&family=Podkova:wght@400&family=Roboto+Slab&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --text:'Podkova', serif;
+    --headings: 'Roboto Slab', serif;
+    --japanese: 'M PLUS 2', sans-serif;
+    --edit: 'Architects Daughter', cursive;
+}
+
+body{
+    margin: 20pt;
+}
+
+img, .visit-link, header nav, #to-top, footer nav{
+    display: none;
+}
+header h1{
+    font-family: var(--headings);
+    display: block;
+    text-align: center;
+    font-size: 30pt;
+}
+
+h1, h2, h3, h4{
+    font-family: var(--headings);
+}
+
+h2{
+    font-size: 20pt;
+}
+
+h3{
+    font-size: 15pt;
+}
+
+p{
+    text-indent: 15pt;
+}
+
+p, li, a, blockquote{
+    font-family: var(--text);
+    font-size: 10pt;
+    line-height: 12pt;
+}
+
+blockquote{
+    border-left: 4px black solid;
+    padding-left: 30pt;
+}
+
+.japanese{
+    font-family: var(--japanese);
+}
+
+.centered, .author{
+    text-align: right;
+    
+}
+
+
+
+
+.footnote-link{
+    font-size: 10pt;
+    vertical-align: super;
+    font-weight: normal;
+    padding:2pt;
+}
+
+span.edit, .edit p, .edit a{
+    font-style: italic;
+    font-weight: 900;
+}
+
+a{
+    color: unset;
+}
+.author a{
+    text-decoration: none;
+}
+
+
+section{
+    page-break-inside: avoid;
+}
+
+footer {page-break-after: always;}
+
+
+#pubdomain{
+    text-align: center;
+}
+
+#pubdomain a{
+    text-decoration: none;
+}
